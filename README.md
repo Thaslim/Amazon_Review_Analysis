@@ -29,7 +29,7 @@ The dataset contains roughly 6 million data points. GPU is preferred for faster 
      pip install nltk and download(stopwords, wordnet corpuses)
      pip install pyLDAvis
 Download Topic_modeling.ipynb and run it using jupyter notebook
-## [Visualize](https://thaslim.github.io/CMPE_255_Amzn/)  generated topic
+## [Visualize](https://thaslim.github.io/Amazon_Review_Analysis/)  generated topic
 
 ## [Recommender system](https://en.wikipedia.org/wiki/Recommender_system) using [ALS](https://spark.apache.org/docs/latest/mllib-collaborative-filtering.html)
 
