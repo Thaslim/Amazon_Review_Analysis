@@ -74,7 +74,10 @@ Now download the files:
 Dataset after preprocessing for ALS => [als_preprocessed_dataset](https://drive.google.com/drive/folders/1YIFgIOtMTuOEHUJEJfFV_mLE8lwz8unC?usp=sharing)
 
 ## Sentiment Analysis on the topics
-Libraries:
+Sentiment scores for each topic generated to evaluate if they are positive and assign raitng accordingly.
+
+[Topic Modeling with sentiment Analysis]
+https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/Sentiment%20Analysis/Amazon_Reviews_Topic_Modeling.ipynb
 
 ## Tableau for Visualizations
 Used tableau for making visualizations on our large dataset holding millions of data.
@@ -95,6 +98,7 @@ Used tableau for making visualizations on our large dataset holding millions of 
  
 ### Visualizations : 
 1. Sum of ratings for each product to show teh top products having highest ratings. The bars in this plot are labeled by number of records per each productID.
-2. Rating category distribution for each product 
+2. Change in ratings and revoews over the years
 3. Overall Rating distribution
+4. Fetching Ratings distribution in a month.
 
