@@ -75,6 +75,8 @@ Dataset after preprocessing for ALS => [als_preprocessed_dataset](https://drive.
 
 ## Sentiment Analysis on the topics
 Sentiment scores for each topic generated to evaluate if they are positive and assign raitng accordingly.
+1. Applied KMeans for Clustering.
+2. TFIDFVectorizer
 
 [Topic Modeling with sentiment Analysis]
 (https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/Sentiment%20Analysis/Amazon_Reviews_Topic_Modeling.ipynb) 
