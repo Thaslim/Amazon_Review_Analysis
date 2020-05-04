@@ -10,6 +10,7 @@ The number of people who prefer online shopping is rapidly increasing due to the
    2. Build a recommendation system using collaborative filtering (ALS) method and topic modeling (LDA) method and compare their respective results
    3. Use topics generated from LDA and analyze sentiment of the reviews in order to score products by the topics mentioned in their reviews.
 
+
 ## Data Collection and Preparation
 
 The [amazon review datasets](https://nijianmo.github.io/amazon/index.html) are freely available online. For this analysis we used a dataset specific to the “Home and Kitchen” category. Initially we explored the complete review data which had 21million entries, later we decided to work on a smaller subset which had 7million entries, due to technical difficulties faced by some of us.
@@ -27,8 +28,7 @@ The dataset contains roughly 6 million data points. GPU is preferred for faster 
      pip install pandas
      pip install nltk and download(stopwords, wordnet corpuses)
      pip install pyLDAvis
-![Download](LDA - Recommender/Topic_Modeling_grouped.ipynb) Topic_Modeling_grouped.ipynb and run it using jupyter notebook It will save generated topics as html.
-![Download](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/LDA%20-%20Recommender/Recommendation_LDA.ipynb) Recommendation_LDA.ipynb and run it with Jupyter Notebook to make recommendations
+Download Topic_modeling.ipynb and run it using jupyter notebook
 ## [Visualize](https://thaslim.github.io/Amazon_Review_Analysis/)  generated topic
 
 ## [Recommender system](https://en.wikipedia.org/wiki/Recommender_system) using [ALS](https://spark.apache.org/docs/latest/mllib-collaborative-filtering.html)
@@ -67,9 +67,9 @@ Spark is implemented on Hadoop that is HDFS (hadoop distributed file system). Fo
    2. User Based Collaborative Filtering
    
 Now download the files:
-[Recommendation System (Item Based)](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/ALS_Recommendation/ALS%20Collaborative%20Filtering%20(Item%20Based).ipynb) file and run using jupyter notebook.
+[Recommendation System (Item Based)](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/ALS%20Recommendation%20System/ALS%20Collaborative%20Filtering%20(Item%20Based).ipynb) file and run using jupyter notebook.
 
-[Recommendation System (User Based)](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/ALS_Recommendation/ALS%20Collaborative%20Filtering%20(User%20Based).ipynb) file and run using jupyter notebook.
+[Recommendation System (User Based)](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/ALS%20Recommendation%20System/ALS%20Collaborative%20Filtering%20(User%20Based).ipynb) file and run using jupyter notebook.
 
 Dataset after preprocessing for ALS => [als_preprocessed_dataset](https://drive.google.com/drive/folders/1YIFgIOtMTuOEHUJEJfFV_mLE8lwz8unC?usp=sharing)
 
