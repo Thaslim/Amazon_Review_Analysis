@@ -78,8 +78,7 @@ Sentiment scores for each topic generated to evaluate if they are positive and a
 1. Applied KMeans for Clustering.
 2. TFIDFVectorizer
 
-[Topic Modeling with sentiment Analysis]
-(https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/Sentiment%20Analysis/Amazon_Reviews_Topic_Modeling.ipynb) 
+[Topic Modeling with sentiment Analysis](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/Sentiment%20Analysis/Amazon_Reviews_Topic_Modeling.ipynb) 
 
 ## Tableau for Visualizations
 Used tableau for making visualizations on our large dataset holding millions of data.
