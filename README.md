@@ -61,15 +61,17 @@ Spark is implemented on Hadoop that is HDFS (hadoop distributed file system). Fo
     4. export PATH=$SPARK_HOME/bin:$PATH
     5. pip3 install findspark
     6. jupyter notebook
+
+### ALS for recommendations:
+   1. Item Based Collaborative Filtering
+   2. User Based Collaborative Filtering
    
-Now download the [ALS_CF_Recommendation_System](https://github.com/shravanthi94/Amazon-Review-Data-Analysis/blob/master/ALS_CF_Recommendation_System.ipynb) file and run using jupyter notebook.
+Now download the files:
+[Recommendation System (Item Based)](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/ALS_Recommendation/ALS%20Collaborative%20Filtering%20(Item%20Based).ipynb) file and run using jupyter notebook.
+
+[Recommendation System (User Based)](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/ALS_Recommendation/ALS%20Collaborative%20Filtering%20(User%20Based).ipynb) file and run using jupyter notebook.
 
 Dataset after preprocessing for ALS => [als_preprocessed_dataset](https://drive.google.com/drive/folders/1YIFgIOtMTuOEHUJEJfFV_mLE8lwz8unC?usp=sharing)
-
-
-## Sentiment Analysis
-
-### Steps:
 
 
 ## Tableau for Visualizations
