@@ -27,7 +27,7 @@ The dataset contains roughly 6 million data points. GPU is preferred for faster 
      pip install pandas
      pip install nltk and download(stopwords, wordnet corpuses)
      pip install pyLDAvis
-##### [Download](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/LDA%20-%20Recommender/Topic_Modeling_grouped.ipynb) Topic_Modeling_grouped.ipynb and run it using jupyter notebook It will save generated topics as html.
+##### [Download](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/LDA%20-%20Recommender/Topic_Modeling_grouped.ipynb) Topic_Modeling_grouped.ipynb and run it using jupyter notebook It will save generated model, corpus, and dictionary.
 ##### [Download](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/LDA%20-%20Recommender/Recommendation_LDA.ipynb) Recommendation_LDA.ipynb and run it with Jupyter Notebook to make recommendations
 ## [Visualize](https://thaslim.github.io/Amazon_Review_Analysis/)  generated topic
 
