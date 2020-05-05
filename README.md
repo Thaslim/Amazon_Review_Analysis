@@ -67,7 +67,7 @@ Spark is implemented on Hadoop that is HDFS (hadoop distributed file system). Fo
    2. User Based Collaborative Filtering
    
 ##### Now download the files:
-   1. [Exploratory Data Analysis]() file and run using jupyter notebook.
+   1. [Exploratory Data Analysis](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/ALS%20Recommendation%20System/Exploratory_Analysis.ipynb) file and run using jupyter notebook.
    
    2. [Recommendation System (Item Based)](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/ALS_Recommendation/ALS%20Collaborative%20Filtering%20(Item%20Based).ipynb) file and run using jupyter notebook.
 
