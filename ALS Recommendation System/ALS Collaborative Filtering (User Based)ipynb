@@ -223,7 +223,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 6,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -234,7 +234,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 7,
    "metadata": {},
    "outputs": [
     {
@@ -279,7 +279,7 @@
        "0      4.0  A2MNB77YGJ3CN0  B00004R940"
       ]
      },
-     "execution_count": 6,
+     "execution_count": 7,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -318,7 +318,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 2,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -329,7 +329,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 3,
    "metadata": {},
    "outputs": [
     {
@@ -338,7 +338,7 @@
        "DataFrame[overall: float, reviewerID: string, asin: string]"
       ]
      },
-     "execution_count": 8,
+     "execution_count": 3,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -630,16 +630,16 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": 4,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "60545"
+       "60834"
       ]
      },
-     "execution_count": 15,
+     "execution_count": 4,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -667,7 +667,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": 5,
    "metadata": {},
    "outputs": [
     {
@@ -677,11 +677,11 @@
       "+-------+-------+-------+\n",
       "|overall|   item| userid|\n",
       "+-------+-------+-------+\n",
-      "|    5.0| 7989.0| 4698.0|\n",
-      "|    5.0|20672.0|22732.0|\n",
-      "|    5.0|16503.0|13464.0|\n",
-      "|    1.0| 1840.0|50524.0|\n",
-      "|    5.0|25781.0|34309.0|\n",
+      "|    5.0|14972.0|56524.0|\n",
+      "|    1.0|20408.0|29386.0|\n",
+      "|    5.0| 6494.0|17051.0|\n",
+      "|    3.0|   46.0|54352.0|\n",
+      "|    4.0|11282.0|41739.0|\n",
       "+-------+-------+-------+\n",
       "only showing top 5 rows\n",
       "\n"
@@ -709,32 +709,32 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
+   "execution_count": 6,
    "metadata": {},
    "outputs": [],
    "source": [
     "# renaming columns \n",
-    "df_final = df_final.selectExpr(\"item as productID\",\"overall as rating\", \"userid as userID\")"
+    "df_final = df_final.selectExpr(\"userid as userID\",\"item as productID\",\"overall as rating\")"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
+   "execution_count": 7,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "+---------+------+-------+\n",
-      "|productID|rating| userID|\n",
-      "+---------+------+-------+\n",
-      "|   7989.0|   5.0| 4698.0|\n",
-      "|  20672.0|   5.0|22732.0|\n",
-      "|  16503.0|   5.0|13464.0|\n",
-      "|   1840.0|   1.0|50524.0|\n",
-      "|  25781.0|   5.0|34309.0|\n",
-      "+---------+------+-------+\n",
+      "+-------+---------+------+\n",
+      "| userID|productID|rating|\n",
+      "+-------+---------+------+\n",
+      "|56524.0|  14972.0|   5.0|\n",
+      "|29386.0|  20408.0|   1.0|\n",
+      "|17051.0|   6494.0|   5.0|\n",
+      "|54352.0|     46.0|   3.0|\n",
+      "|41739.0|  11282.0|   4.0|\n",
+      "+-------+---------+------+\n",
       "only showing top 5 rows\n",
       "\n"
      ]
@@ -746,13 +746,45 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 20,
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "root\n",
+      " |-- userID: double (nullable = false)\n",
+      " |-- productID: double (nullable = false)\n",
+      " |-- rating: double (nullable = true)\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "df_final.printSchema()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Save the preprocessed file to local\n",
+    "als_data = df_temp.toPandas()\n",
+    "als_data.to_csv('als_preprocessed1.csv', index = False)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
    "metadata": {},
    "outputs": [],
    "source": [
     "#Save the preprocessed file to local\n",
     "als_data = df_final.toPandas()\n",
-    "als_data.to_csv('als_preprocessed.csv')"
+    "als_data.to_csv('als_preprocessed.csv', index = False)"
    ]
   },
   {
@@ -764,16 +796,16 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
+   "execution_count": 9,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Train dataset size:  36350\n",
-      "Validation dataset size:  12093\n",
-      "Test dataset size:  12102\n"
+      "Train dataset size:  36547\n",
+      "Validation dataset size:  12112\n",
+      "Test dataset size:  12175\n"
      ]
     }
    ],
@@ -836,7 +868,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 24,
+   "execution_count": 10,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -849,7 +881,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 25,
+   "execution_count": 11,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -863,7 +895,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 26,
+   "execution_count": 12,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -876,14 +908,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 73,
+   "execution_count": 13,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Total time taken:  896.339750289917\n"
+      "Total time taken:  746.767776966095\n"
      ]
     }
    ],
@@ -1194,7 +1226,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 88,
+   "execution_count": 56,
    "metadata": {},
    "outputs": [
     {
@@ -1204,26 +1236,26 @@
       "+----------+----------+--------------------+\n",
       "| productID|prediction|               title|\n",
       "+----------+----------+--------------------+\n",
-      "|B0000665TD| 1.6035212|J-2000 Jiffy Garm...|\n",
-      "|B0000665TD| 1.6035212|J-2000 Jiffy Garm...|\n",
-      "|B0001MRUXW|  2.789501|\"Cambro RFSCW8 8 ...|\n",
-      "|B0001MRUXW|  2.789501|\"Cambro RFSCW8 8 ...|\n",
-      "|B00061J2B6| 1.7379642|Steamfast SF-680 ...|\n",
-      "|B000B61X18|  3.235203|Aprilaire 501 Rep...|\n",
-      "|B000I0WQWC| 2.7849176|Holmes Arm and Ha...|\n",
-      "|B000WJVB1Q| 1.3849219|SPACE Seating Big...|\n",
-      "|B000X6K9J8| 2.4911835|EZ Off Jar Opener...|\n",
-      "|B000ZPGB62|  2.259657|Cozy Sack 7-Feet ...|\n",
-      "|B0011TRO80| 1.1570232|Ginsu Gourmet Chi...|\n",
-      "|B0012BU6TQ| 1.9036897|ANBOO Steam Mop P...|\n",
-      "|B0015HEABW| 2.7988913|16 oz. Olive Oil ...|\n",
-      "|B0015WLSJE| 1.3763881|\"Floating Shelf 2...|\n",
-      "|B001AO7PEY| 1.5583534|Pop Culture Graph...|\n",
-      "|B001FNVXS4|  2.127907|var aPageStart = ...|\n",
-      "|B001G0PMW4| 1.9601758|Mountain Woods 15...|\n",
-      "|B001I7FP54| 2.2549953|Deluxe Food Strai...|\n",
-      "|B001U3OZQ6| 2.1022484|Yankee Candle Sma...|\n",
-      "|B0021XM0UC| 0.7238024|Chef Craft 21006 ...|\n",
+      "|B0000665TD| 1.2417756|J-2000 Jiffy Garm...|\n",
+      "|B0000665TD| 1.2417756|J-2000 Jiffy Garm...|\n",
+      "|B0001MRUXW| 2.1493049|\"Cambro RFSCW8 8 ...|\n",
+      "|B0001MRUXW| 2.1493049|\"Cambro RFSCW8 8 ...|\n",
+      "|B000B61X18|  2.093344|Aprilaire 501 Rep...|\n",
+      "|B000DZD1AS|  1.209804|DANCO Bathroom La...|\n",
+      "|B000FPZ2Z8| 1.8768686|Wilton Easy Flex ...|\n",
+      "|B000IZ0B92|  3.531414|J.K. Adams 12-Inc...|\n",
+      "|B000LNS2HE| 1.4514028|Anchor Hocking Gl...|\n",
+      "|B000O1EQDC| 1.4558289|Foremost 327722 M...|\n",
+      "|B000Q6KRI8|  1.036595|Pfaltzgraff Rio 1...|\n",
+      "|B000RJ8ZH4| 1.1702745|D'light Online 10...|\n",
+      "|B000WJVB1Q| 1.1528393|SPACE Seating Big...|\n",
+      "|B000X6K9J8| 1.6879174|EZ Off Jar Opener...|\n",
+      "|B0011TRO80|0.61611044|Ginsu Gourmet Chi...|\n",
+      "|B0013B8L2Y| 2.8432438|Kamenstein Butter...|\n",
+      "|B0014CQEF8|0.55395806|Rubbermaid L3-287...|\n",
+      "|B0015HEABW|  0.559998|16 oz. Olive Oil ...|\n",
+      "|B001FNVXS4| 0.3533698|var aPageStart = ...|\n",
+      "|B001FNZ0FG| 0.9793196|Celebrations Hall...|\n",
       "+----------+----------+--------------------+\n",
       "only showing top 20 rows\n",
       "\n"
@@ -1233,20 +1265,302 @@
    "source": [
     "df_convert.createOrReplaceTempView('result')\n",
     "title.createOrReplaceTempView('titles')\n",
-    "spark.sql(\"\"\"\n",
+    "final = spark.sql(\"\"\"\n",
     "      SELECT m.productID_old as productID,\n",
     "      m.prediction,\n",
     "      d.title\n",
     "      FROM result m LEFT JOIN titles d ON m.productID_old = d.asin\n",
     "      WHERE m.productID_old IS NOT NULL\n",
-    "\"\"\").show()"
+    "      \"\"\")\n",
+    "final.show(20)"
    ]
   },
   {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Check for the product details on amazon using the product ID: https://www.amazon.com/gp/product/B0000665TD/"
+    "### 10. Adding links to the products (Amazon Website)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 58,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from IPython.display import HTML"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 57,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>productID</th>\n",
+       "      <th>prediction</th>\n",
+       "      <th>title</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <td>0</td>\n",
+       "      <td>B0000665TD</td>\n",
+       "      <td>1.241776</td>\n",
+       "      <td>J-2000 Jiffy Garment Steamer with Plastic Stea...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <td>1</td>\n",
+       "      <td>B0000665TD</td>\n",
+       "      <td>1.241776</td>\n",
+       "      <td>J-2000 Jiffy Garment Steamer with Plastic Stea...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <td>2</td>\n",
+       "      <td>B0001MRUXW</td>\n",
+       "      <td>2.149305</td>\n",
+       "      <td>\"Cambro RFSCW8 8 qt Capacity, 9-15/16\"\" Top Di...</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "    productID  prediction                                              title\n",
+       "0  B0000665TD    1.241776  J-2000 Jiffy Garment Steamer with Plastic Stea...\n",
+       "1  B0000665TD    1.241776  J-2000 Jiffy Garment Steamer with Plastic Stea...\n",
+       "2  B0001MRUXW    2.149305  \"Cambro RFSCW8 8 qt Capacity, 9-15/16\"\" Top Di..."
+      ]
+     },
+     "execution_count": 57,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df_links = final.toPandas()\n",
+    "df_links.head(3)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 59,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df_links = df_links.iloc[0:20]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 61,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df_links['Link'] = df_links['productID'].apply(\n",
+    "                lambda x: '<a href=\"https://www.amazon.com/gp/product/{}\">link</a>'.format(x))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 62,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>productID</th>\n",
+       "      <th>prediction</th>\n",
+       "      <th>title</th>\n",
+       "      <th>Link</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>B0000665TD</td>\n",
+       "      <td>1.241776</td>\n",
+       "      <td>J-2000 Jiffy Garment Steamer with Plastic Steam Head, 120 Volt</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B0000665TD\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>B0000665TD</td>\n",
+       "      <td>1.241776</td>\n",
+       "      <td>J-2000 Jiffy Garment Steamer with Plastic Steam Head, 120 Volt</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B0000665TD\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>B0001MRUXW</td>\n",
+       "      <td>2.149305</td>\n",
+       "      <td>\"Cambro RFSCW8 8 qt Capacity, 9-15/16\"\" Top Diameter x 10-7/8\"\" Height</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B0001MRUXW\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>B0001MRUXW</td>\n",
+       "      <td>2.149305</td>\n",
+       "      <td>\"Cambro RFSCW8 8 qt Capacity, 9-15/16\"\" Top Diameter x 10-7/8\"\" Height</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B0001MRUXW\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>B000B61X18</td>\n",
+       "      <td>2.093344</td>\n",
+       "      <td>Aprilaire 501 Replacment Filter for Aprilaire Whole House Electronic Air Purifier Model: 5000, MERV 16 (Pack of 10)</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B000B61X18\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>5</th>\n",
+       "      <td>B000DZD1AS</td>\n",
+       "      <td>1.209804</td>\n",
+       "      <td>DANCO Bathroom Lavatory Mesh Strainer, Stainless Steel, 2-1/2 Inch, 1-Pack (88820)</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B000DZD1AS\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>6</th>\n",
+       "      <td>B000FPZ2Z8</td>\n",
+       "      <td>1.876869</td>\n",
+       "      <td>Wilton Easy Flex Silicone Mini Cups 12 Count</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B000FPZ2Z8\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>7</th>\n",
+       "      <td>B000IZ0B92</td>\n",
+       "      <td>3.531414</td>\n",
+       "      <td>J.K. Adams 12-Inch-by-2-3/4-Inch Maple Wood Medium Gourmet Rolling Pin</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B000IZ0B92\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>8</th>\n",
+       "      <td>B000LNS2HE</td>\n",
+       "      <td>1.451403</td>\n",
+       "      <td>Anchor Hocking Glass Prep Bowls Custard Cups, 6 Ounce, Set of 4</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B000LNS2HE\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>9</th>\n",
+       "      <td>B000O1EQDC</td>\n",
+       "      <td>1.455829</td>\n",
+       "      <td>Foremost 327722 Modular Large Open Cube Storage System, Honey</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B000O1EQDC\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>10</th>\n",
+       "      <td>B000Q6KRI8</td>\n",
+       "      <td>1.036595</td>\n",
+       "      <td>Pfaltzgraff Rio 14-Ounce Wide Rim Soup Bowl</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B000Q6KRI8\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>11</th>\n",
+       "      <td>B000RJ8ZH4</td>\n",
+       "      <td>1.170274</td>\n",
+       "      <td>D'light Online 10 Hour Burn Time Unscented Votive Candles - for Birthdays, Baby Shower, Home Decoration and Weddings (White, Set of 72)</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B000RJ8ZH4\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>12</th>\n",
+       "      <td>B000WJVB1Q</td>\n",
+       "      <td>1.152839</td>\n",
+       "      <td>SPACE Seating Big and Tall AirGrid Back and Padded Mesh Seat, Adjustable Arms, Gunmetal Finish Base Ergonomic Managers Chair, Black</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B000WJVB1Q\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>13</th>\n",
+       "      <td>B000X6K9J8</td>\n",
+       "      <td>1.687917</td>\n",
+       "      <td>EZ Off Jar Opener For All Jar Sizes, White</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B000X6K9J8\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>14</th>\n",
+       "      <td>B0011TRO80</td>\n",
+       "      <td>0.616110</td>\n",
+       "      <td>Ginsu Gourmet Chikara Series Forged 12-Piece Japanese Steel Knife Set – Cutlery Set with 420J Stainless Steel Kitchen Knives – Bamboo Finish Block, 07112DS</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B0011TRO80\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>15</th>\n",
+       "      <td>B0013B8L2Y</td>\n",
+       "      <td>2.843244</td>\n",
+       "      <td>Kamenstein Butterfly Wine Rack</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B0013B8L2Y\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>16</th>\n",
+       "      <td>B0014CQEF8</td>\n",
+       "      <td>0.553958</td>\n",
+       "      <td>Rubbermaid L3-2879-R1-Peri Ice Cube Tray Set</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B0014CQEF8\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>17</th>\n",
+       "      <td>B0015HEABW</td>\n",
+       "      <td>0.559998</td>\n",
+       "      <td>16 oz. Olive Oil Bottle Set</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B0015HEABW\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>18</th>\n",
+       "      <td>B001FNVXS4</td>\n",
+       "      <td>0.353370</td>\n",
+       "      <td>var aPageStart = (new Date()).getTime();</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B001FNVXS4\">link</a></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>19</th>\n",
+       "      <td>B001FNZ0FG</td>\n",
+       "      <td>0.979320</td>\n",
+       "      <td>Celebrations Halloween Indoor/Outdoor Rope Lights 18',Purple</td>\n",
+       "      <td><a href=\"https://www.amazon.com/gp/product/B001FNZ0FG\">link</a></td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>"
+      ],
+      "text/plain": [
+       "<IPython.core.display.HTML object>"
+      ]
+     },
+     "execution_count": 62,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "HTML(df_links.to_html(render_links=True,escape=False))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Check for the product details on amazon website by clicking on the respective link"
    ]
   },
   {
