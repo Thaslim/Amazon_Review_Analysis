@@ -1,6 +1,6 @@
 # Sentiment Analysis and Recommender System on Amazon Reviews
 
-Sentiment Analysis and Recommender System based on Amazon Reviews for Home and Kitchen Dataset.
+Sentiment Analysis and Recommender System based on Amazon's Home and Kitchen Dataset.
 
 ## Overview
 The number of people who prefer online shopping is rapidly increasing due to the technological advancement and convenience of shopping anywhere at any time. The recent studies show that the most of all online shoppers use reviews to decide on what products to buy. Reviews not only help customers, but it also helps to strengthen sellers' trustworthiness. Amazon is the world’s largest retailer with millions of products. This project deals with the study of statistical analysis of reviews and ratings by Amazon users.
