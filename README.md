@@ -1,4 +1,4 @@
-# Sentiment Analysis and Recommender System based on Amazon Reviews
+# Sentiment Analysis and Recommender System on Amazon Reviews
 
 Sentiment Analysis and Recommender System based on Amazon Reviews for Home and Kitchen Dataset.
 
