@@ -98,7 +98,7 @@ Dataset after preprocessing for ALS => [ALS_AmazonRantings and ALS_AmazonTitles]
       nltk.download()
       Select stopwords from the Corpora tab in the GUI that opens and click on download. 
 
-    4. Run the file [LDA And Sentiment Analysis for Single product using textblob](https://github.com/Thaslim/             Amazon_Review_Analysis/blob/master/Topic%20Modelling%20and%20Sentiment%20Analysis/Sentiment%20Analysis%20TextBlob/LDA_Sentiment_Similar_Products_Sheets.ipynb) for results
+    4. Run the file [LDA And Sentiment Analysis for Single product using textblob](LDA_Sentiment_Similar_Products_Sheets.ipynb) for results
    
     5. Run the file [LDA And Sentiment Analysis for group of similar products using textblob](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/Topic%20Modelling%20and%20Sentiment%20Analysis/Sentiment%20Analysis%20TextBlob/LDA_Sentiment_Single_Product_B00FLYWNYQ_Cooker.ipynb) for results
   
