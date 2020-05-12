@@ -92,18 +92,18 @@ Dataset after preprocessing for ALS => [ALS_AmazonRantings and ALS_AmazonTitles]
        Download File: http://mallet.cs.umass.edu/dist/mallet-2.0.8.zip
        mallet_path = 'path/to/mallet-2.0.8/bin/mallet' # update this path
     
-Now run the files:
+##### Now run the files:
+
 [LDA and LDA mallet : Choosing optimal topic number]
 
-     (https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/Topic%20Modelling%20and%20Sentiment%20Analysis/Sentiment%20Analysis%20Vader/Amazon_Reviews_LDAMallet.ipynb)
-
+(https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/Topic%20Modelling%20and%20Sentiment%20Analysis/Sentiment%20Analysis%20Vader/Amazon_Reviews_LDAMallet.ipynb)
 
 [Topic Model Visualizations]
-
 
 (https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/Topic%20Modelling%20and%20Sentiment%20Analysis/Sentiment%20Analysis%20Vader/Amazon_Reviews_LDAMallet_TopicDistribution.ipynb)
 
 [Sentiment Analysis using Vader sentiment Analyser]
+
 (https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/Topic%20Modelling%20and%20Sentiment%20Analysis/Sentiment%20Analysis%20Vader/Sentiment%20Scores%20per%20topic.ipynb)
 
 ### Steps to run Topic Modelling and Sentiment Analysis files using TextBlob
