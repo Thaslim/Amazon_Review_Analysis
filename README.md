@@ -65,14 +65,14 @@ Spark is implemented on Hadoop that is HDFS (hadoop distributed file system). Fo
 ### ALS for recommendations:
    1. Item Based Collaborative Filtering
    2. User Based Collaborative Filtering
-   
+
+Dataset after preprocessing for ALS => [ALS_AmazonRantings and ALS_AmazonTitles](https://drive.google.com/drive/folders/1YIFgIOtMTuOEHUJEJfFV_mLE8lwz8unC?usp=sharing)
+
 ##### Now download the files:
-   
+
    1. [Recommendation System (Item Based)](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/ALS%20Recommendation%20System/Step3_ALS%20Collaborative%20Filtering%20(User%20Based).ipynb) file and run using jupyter notebook.
 
    2. [Recommendation System (User Based)](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/ALS%20Recommendation%20System/Step4_ALS%20Collaborative%20Filtering%20(Item%20Based).ipynb) file and run using jupyter notebook.
-
-Dataset after preprocessing for ALS => [ALS_AmazonRantings and ALS_AmazonTitles](https://drive.google.com/drive/folders/1YIFgIOtMTuOEHUJEJfFV_mLE8lwz8unC?usp=sharing)
 
 ## Topic Modeling and Sentiment Analysis
 1. Topic Modeling is done on the top 25 products that has 300k sentences in total in all their reviews together. 
