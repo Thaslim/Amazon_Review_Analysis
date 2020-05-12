@@ -79,6 +79,28 @@ Dataset after preprocessing for ALS => [ALS_AmazonRantings and ALS_AmazonTitles]
 2. Topic Modelling and Sentiment Analysis using TextBlob
 
 ### Steps to run Topic Modelling and Sentiment Analysis files using TextBlob
+    1. Install followignling libraries using pip:
+       pip install gensim
+       pip install wordcloud
+       pip install pyLDAvis
+       pip install gensim.models
+       pip install vaderSentiment
+    2. Dowbload nltk 
+       nltk.download('vader_lexicon')
+       nltk.download()
+    3. For LDA MAllet
+       Download File: http://mallet.cs.umass.edu/dist/mallet-2.0.8.zip
+       mallet_path = 'path/to/mallet-2.0.8/bin/mallet' # update this path
+    
+Now run the files:
+[LDA and LDA mallet : Choosing optimal topic number]
+https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/Topic%20Modelling%20and%20Sentiment%20Analysis/Sentiment%20Analysis%20Vader/Amazon_Reviews_LDAMallet.ipynb
+
+[Topic Model Visualizations]
+https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/Topic%20Modelling%20and%20Sentiment%20Analysis/Sentiment%20Analysis%20Vader/Amazon_Reviews_LDAMallet_TopicDistribution.ipynb
+
+[Sentiment Analysis using Vader sentiment Analyser]
+https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/Topic%20Modelling%20and%20Sentiment%20Analysis/Sentiment%20Analysis%20Vader/Sentiment%20Scores%20per%20topic.ipynb
 
 ### Steps to run Topic Modelling and Sentiment Analysis files using TextBlob
     1. Install the following libraries using pip3: 
@@ -126,4 +148,7 @@ Used tableau for making visualizations on our large dataset holding millions of 
 2. Change in ratings and reviews over the years
 3. Overall Rating distribution
 4. Fetching Ratings distribution in a month.
+5. Sentiment Result visualization for Vader Sentiment Analysis
+6. Ratings visualization for each topic in Vader Sentiment Analysis
+7. Ratings visualization for each topic in TextBlob
 
