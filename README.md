@@ -67,15 +67,12 @@ Spark is implemented on Hadoop that is HDFS (hadoop distributed file system). Fo
    2. User Based Collaborative Filtering
    
 ##### Now download the files:
-   1. [Preprocessing for ALS](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/ALS%20Recommendation%20System/Step1_ALS%20Preprocessing.ipynb) file and run using jupyter notebook.
    
-   2. [Exploratory Data Analysis](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/ALS%20Recommendation%20System/Step2_Exploratory_Analysis.ipynb) file and run using jupyter notebook.
-   
-   3. [Recommendation System (Item Based)](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/ALS%20Recommendation%20System/Step3_ALS%20Collaborative%20Filtering%20(User%20Based).ipynb) file and run using jupyter notebook.
+   1. [Recommendation System (Item Based)](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/ALS%20Recommendation%20System/Step3_ALS%20Collaborative%20Filtering%20(User%20Based).ipynb) file and run using jupyter notebook.
 
-   4. [Recommendation System (User Based)](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/ALS%20Recommendation%20System/Step4_ALS%20Collaborative%20Filtering%20(Item%20Based).ipynb) file and run using jupyter notebook.
+   2. [Recommendation System (User Based)](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/ALS%20Recommendation%20System/Step4_ALS%20Collaborative%20Filtering%20(Item%20Based).ipynb) file and run using jupyter notebook.
 
-Dataset after preprocessing for ALS => [als_preprocessed_dataset](https://drive.google.com/drive/folders/1YIFgIOtMTuOEHUJEJfFV_mLE8lwz8unC?usp=sharing)
+Dataset after preprocessing for ALS => [ALS_AmazonRatings and ALS_AmazonTitles](https://drive.google.com/open?id=1zkpjqpEQYFGTR90KMR2a2TXvPjBnXZE5)
 
 ## Topic Modeling and Sentiment Analysis
 1. Topic Modeling is done on the top 25 products that has 300k sentences in total in all their reviews together. 
