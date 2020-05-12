@@ -81,7 +81,7 @@ Dataset after preprocessing for ALS => [ALS_AmazonRantings and ALS_AmazonTitles]
 ### Steps to run Topic Modelling and Sentiment Analysis files using TextBlob
 
 ### Steps to run Topic Modelling and Sentiment Analysis files using TextBlob
-   1. Install the following libraries using pip3: 
+    1. Install the following libraries using pip3: 
       pip3 install pandas
       pip3 install pickle
       pip3 install numpy
@@ -89,14 +89,14 @@ Dataset after preprocessing for ALS => [ALS_AmazonRantings and ALS_AmazonTitles]
       pip3 install gensim
       pip3 install spacy
       pip3 install pyLDAvis
-   2. Download the file from the path and update the file path in 'mallet_path' variable. 
+    2. Download the file from the path and update the file path in 'mallet_path' variable. 
       File Path : http://mallet.cs.umass.edu/dist/mallet-2.0.8.zip
-   3. Open a Python console and do the following: 
+    3. Open a Python console and do the following: 
       import nltk
       nltk.download()
       Select stopwords from the Corpora tab in the GUI that opens and click on download. 
-   4. Run the file [LDA And Sentiment Analysis for Single product using textblob](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/Topic%20Modelling%20and%20Sentiment%20Analysis/Sentiment%20Analysis%20TextBlob/LDA_Sentiment_Similar_Products_Sheets.ipynb) for results
-   5. Run the file [LDA And Sentiment Analysis for group of similar products using textblob](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/Topic%20Modelling%20and%20Sentiment%20Analysis/Sentiment%20Analysis%20TextBlob/LDA_Sentiment_Single_Product_B00FLYWNYQ_Cooker.ipynb) for results
+    4. Run the file [LDA And Sentiment Analysis for Single product using textblob](https://github.com/Thaslim/             Amazon_Review_Analysis/blob/master/Topic%20Modelling%20and%20Sentiment%20Analysis/Sentiment%20Analysis%20TextBlob/LDA_Sentiment_Similar_Products_Sheets.ipynb) for results
+    5. Run the file [LDA And Sentiment Analysis for group of similar products using textblob](https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/Topic%20Modelling%20and%20Sentiment%20Analysis/Sentiment%20Analysis%20TextBlob/LDA_Sentiment_Single_Product_B00FLYWNYQ_Cooker.ipynb) for results
   
 
 
