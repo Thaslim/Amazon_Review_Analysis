@@ -94,9 +94,13 @@ Dataset after preprocessing for ALS => [ALS_AmazonRantings and ALS_AmazonTitles]
     
 Now run the files:
 [LDA and LDA mallet : Choosing optimal topic number]
-(https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/Topic%20Modelling%20and%20Sentiment%20Analysis/Sentiment%20Analysis%20Vader/Amazon_Reviews_LDAMallet.ipynb)
+
+     (https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/Topic%20Modelling%20and%20Sentiment%20Analysis/Sentiment%20Analysis%20Vader/Amazon_Reviews_LDAMallet.ipynb)
+
 
 [Topic Model Visualizations]
+
+
 (https://github.com/Thaslim/Amazon_Review_Analysis/blob/master/Topic%20Modelling%20and%20Sentiment%20Analysis/Sentiment%20Analysis%20Vader/Amazon_Reviews_LDAMallet_TopicDistribution.ipynb)
 
 [Sentiment Analysis using Vader sentiment Analyser]
